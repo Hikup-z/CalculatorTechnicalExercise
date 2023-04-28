@@ -32,6 +32,12 @@ def start():
             inches_centimetres()
         case 4:
             days_seconds()
+        case "exit":
+            return None
+        case _:
+            print("Invalid Input")
+            t.sleep(1)
+            start()
 
 def kilos_stone():
     try :
@@ -52,7 +58,8 @@ def kilos_stone():
             kilos = stone * 6.35029318
             print(f"{stone} stone is equal to {round(kilos, 2)} kilos")
 
-        case "quit"
+        case "quit":
+            return None
 
         case _:
             print("Invalid Input")
@@ -79,6 +86,9 @@ def gigabytes_bytes():
             gigabytes = bytes / 1024 / 1024 / 1024
             print(f"{bytes} bytes is equal to {round(gigabytes, 2)} gigabytes")
 
+        case "quit":
+            return None
+        
         case _:
             print("Invalid Input")
             t.sleep(1)
@@ -102,6 +112,10 @@ def inches_centimetres():
             centimetres = float(input("Enter the amount of centimetres: "))
             inches = centimetres / 2.54
             print(f"{centimetres} centimetres is equal to {round(inches, 2)} inches")
+
+        case "quit":
+            return None
+        
         case _:
             print("Invalid Input")
             t.sleep(1)
@@ -127,6 +141,10 @@ def days_seconds():
             seconds = float(input("Enter the amount of seconds: "))
             days = seconds / 86400
             print(f"{seconds} seconds is equal to {round(days, 2)} days")
+
+        case "quit":
+            return None
+        
         case _:
             print("Invalid Input")
             t.sleep(1)
