@@ -15,14 +15,17 @@ def start():
     3. Inches <--> Centimetres
     4. Days <--> Seconds
 
+    (enter 0 to return to the main menu)
     {dash30}
     """)
-    try:
+    try: 
         choice = int(input("Enter 1 / 2 / 3 / 4 : "))
+        
     except ValueError:
         print("Invalid Input")
         t.sleep(1)
         start()
+
     match (choice):
         case 1:
             kilos_stone()
@@ -32,7 +35,7 @@ def start():
             inches_centimetres()
         case 4:
             days_seconds()
-        case "exit":
+        case 0:
             return None
         case _:
             print("Invalid Input")
@@ -51,11 +54,13 @@ def kilos_stone():
         case "1":
             kilos = float(input("Enter the amount of kilos: "))
             stone = kilos / 6.35029318
+            t.sleep(1)
             print(f"{kilos} kilos is equal to {round(stone, 2)} stone")
 
         case "2":
             stone = float(input("Enter the amount of stone: "))
             kilos = stone * 6.35029318
+            t.sleep(1)
             print(f"{stone} stone is equal to {round(kilos, 2)} kilos")
 
         case "quit":
@@ -79,11 +84,13 @@ def gigabytes_bytes():
         case "1":
             gigabytes = float(input("Enter the amount of gigabytes: "))
             bytes = gigabytes * 1024 * 1024 * 1024
+            t.sleep(1)
             print(f"{gigabytes} gigabytes is equal to {round(bytes, 2)} bytes")
 
         case "2":
             bytes = float(input("Enter the amount of bytes: "))
             gigabytes = bytes / 1024 / 1024 / 1024
+            t.sleep(1)
             print(f"{bytes} bytes is equal to {round(gigabytes, 2)} gigabytes")
 
         case "quit":
@@ -107,10 +114,12 @@ def inches_centimetres():
         case "1":
             inches = float(input("Enter the amount of inches: "))
             centimetres = inches * 2.54
+            t.sleep(1)
             print(f"{inches} inches is equal to {round(centimetres, 2)} centimetres")
         case "2":
             centimetres = float(input("Enter the amount of centimetres: "))
             inches = centimetres / 2.54
+            t.sleep(1)
             print(f"{centimetres} centimetres is equal to {round(inches, 2)} inches")
 
         case "quit":
@@ -129,17 +138,18 @@ def days_seconds():
         t.sleep(1)
         days_seconds()
     
-    #turn the followiing if chain into a match case statement
     
     match (direction):
 
         case "1":
             days = float(input("Enter the amount of days: "))
             seconds = days * 86400
+            t.sleep(1)
             print(f"{days} days is equal to {round(seconds, 2)} seconds")
         case "2":
             seconds = float(input("Enter the amount of seconds: "))
             days = seconds / 86400
+            t.sleep(1)
             print(f"{seconds} seconds is equal to {round(days, 2)} days")
 
         case "quit":
