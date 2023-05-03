@@ -52,8 +52,13 @@ def start():
     (enter 0 to return to the main menu)
     {dash30}
     """)
-
-    choice = int(input("Enter 1 / 2 / 3 / 4 : "))
+    try:
+        choice = int(input("Enter 1 / 2 / 3 / 4 : "))
+    except ValueError:
+        print("Invalid Input")
+        t.sleep(1)
+        start()
+        
     match (choice):
         case 1:
             print(f"Decimal: {decimalVersion}")
@@ -75,12 +80,23 @@ def start():
 
 #conversions to denary ---------------------------
 def decimal_decimal():
-    value = int(input("Enter the value you would like to convert: "))
+    try:
+        value = int(input("Enter the value you would like to convert: "))
+    except ValueError:
+        print("Invalid Input")
+        t.sleep(1)
+        decimal_decimal()
+
     #no calculations necessary
     return value
 
 def binary_decimal():
-    value = input("Enter the value you would like to convert: ")
+    try:
+        value = input("Enter the value you would like to convert: ")
+    except ValueError:
+        print("Invalid Input")
+        t.sleep(1)
+        binary_decimal()
 
     decimal = 0
     for digit in value:
@@ -89,8 +105,13 @@ def binary_decimal():
     return decimal
 
 def octal_decimal():
-    value = input("Enter the value you would like to convert: ")
+    try:
+        value = input("Enter the value you would like to convert: ")
 
+    except ValueError:
+        print("Invalid Input")
+        t.sleep(1)
+        octal_decimal()
     valuearray = [*value]
     length = len(valuearray)
     decimal = 0
@@ -106,7 +127,14 @@ def octal_decimal():
 
 
 def hexadecimal_decimal():
-    value = input("Enter the value you would like to convert: ")
+    try:
+        value = input("Enter the value you would like to convert: ")
+    
+    except ValueError:
+        print("Invalid Input")
+        t.sleep(1)
+        hexadecimal_decimal()
+
     decimal = int(value, 16)
     return decimal
 

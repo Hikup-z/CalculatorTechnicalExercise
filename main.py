@@ -8,11 +8,6 @@ import time as t
 import math as m
 import sys
 
-#plan: main menu, user can choose between arithmetic operations or unit conversions
-# arithmetic user can choose between console input or selection from a list
-#
-
-
 
 dash30 = "-"*30
 
@@ -52,7 +47,6 @@ def mainMenu():
             print("Exiting Program")
             t.sleep(1)
             sys.exit()
-    
         case _:
             print("Invalid Input")
             t.sleep(1)
